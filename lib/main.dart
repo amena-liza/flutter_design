@@ -41,7 +41,53 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
       ),
-      home: const MyHomePage(title: 'Flutter Design Home Page'),
+      home: const ContainerLayoutPractise(title: 'Hello',),
+    );
+  }
+}
+
+class ContainerLayoutPractise extends StatelessWidget {
+  const ContainerLayoutPractise({super.key, required this.title});
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          // TRY THIS: Try changing the color here to a specific color (to
+          // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+          // change color while the other colors stay the same.
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(title),
+        ),
+        body: Center(
+      child: Container(
+        height: double.infinity,
+        width: double.infinity,
+        padding: EdgeInsets.all(50.0),
+        margin: EdgeInsets.all(50.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25.0),
+          color: Colors.red,
+        ),
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          padding: EdgeInsets.all(50.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25.0),
+            color: Colors.yellow,
+          ),
+          child: const Text(
+            'You have pushed the button this many times:',
+            style: TextStyle(color: Colors.black, fontSize: 20),
+          ),
+        ),
+      ),
+    )
     );
   }
 }
@@ -115,18 +161,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: .center,
           children: [
-            Container(
-              color: Colors.red,
-              height: 100.0,
-              width: 100.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: Colors.red,
-              ),
-              child: const Text(
-                'You have pushed the button this many times:',
-                style: TextStyle(color: Colors.blue, fontSize: 20),
-              ),
+            const Text(
+              'You have pushed the button this many times:',
             ),
             Text(
               '$_counter',
