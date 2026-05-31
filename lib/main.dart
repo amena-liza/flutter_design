@@ -112,8 +112,11 @@ class ColumnLayoutPractise extends StatelessWidget {
         body: Center(
           child: Container(
             color: Colors.black38,
-            child: Column(
+            // height: double.infinity,
+            child: Row(
               mainAxisSize: MainAxisSize.min,
+              // mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   height: 100.0,
@@ -123,9 +126,9 @@ class ColumnLayoutPractise extends StatelessWidget {
                     color: Colors.red,
                   ),
                 ),
-                SizedBox.fromSize(
-                  size: const Size(50.0, 50.0), // 200px wide by 100px tall
-                ),
+                // SizedBox.fromSize(
+                //   size: const Size(10.0, 10.0), // 200px wide by 100px tall
+                // ),
                 Container(
                   height: 100.0,
                   width: 100.0,
