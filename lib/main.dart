@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
       ),
-      home: const ContainerLayoutPractise(title: 'Hello',),
+      home: const ColumnLayoutPractise(title: 'Hello',),
     );
   }
 }
@@ -87,6 +87,56 @@ class ContainerLayoutPractise extends StatelessWidget {
           ),
         ),
       ),
+    )
+    );
+  }
+}
+
+class ColumnLayoutPractise extends StatelessWidget {
+  const ColumnLayoutPractise({super.key, required this.title});
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          // TRY THIS: Try changing the color here to a specific color (to
+          // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+          // change color while the other colors stay the same.
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(title),
+        ),
+        body: Center(
+          child: Container(
+            color: Colors.black38,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  height: 100.0,
+                  width: 100.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25.0),
+                    color: Colors.red,
+                  ),
+                ),
+                SizedBox.fromSize(
+                  size: const Size(50.0, 50.0), // 200px wide by 100px tall
+                ),
+                Container(
+                  height: 100.0,
+                  width: 100.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25.0),
+                    color: Colors.red,
+                  ),
+                ),
+              ],
+            ),
+          ),
     )
     );
   }
